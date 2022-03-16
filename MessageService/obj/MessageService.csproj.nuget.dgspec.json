@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService.csproj": {}
+    "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\MessageService.csproj": {}
   },
   "projects": {
-    "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService.csproj": {
+    "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\MessageService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService.csproj",
+        "projectUniqueName": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\MessageService.csproj",
         "projectName": "MessageService",
-        "projectPath": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService.csproj",
+        "projectPath": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\MessageService.csproj",
         "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\obj\\",
+        "outputPath": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

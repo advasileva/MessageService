@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessageService</name>
+    </assembly>
+    <members>
+        <member name="M:MessageService.Controllers.MessageServiceController.Post">
+            <summary>
+            Инициализация списка пользователей и списка сообщений.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.GetUser(System.String)">
+            <summary>
+            Получение информации о пользователе по идентификатору.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.Get">
+            <summary>
+            Получение всего списка пользователей.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesSenderReceiver(System.String,System.String)">
+            <summary>
+            Получения списка сообщений по идентификаторам отправителя и получателя.
+            </summary>
+            <param name="senderId"></param>
+            <param name="receiverId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesSender(System.String)">
+            <summary>
+            Получения списка сообщений по идентификатору отправителя.
+            </summary>
+            <param name="senderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesReceiver(System.String)">
+            <summary>
+            Получения списка сообщений по идентификатору получателя.
+            </summary>
+            <param name="receiverId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessageServiceController.PostUser(System.String,System.String)">
+            <summary>
+            Добавление нового пользователя.
+            </summary>
+            <param name="UserName"></param>
+            <param name="Email"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

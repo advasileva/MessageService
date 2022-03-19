@@ -62,3 +62,35 @@ D:\Development\C#\Пиргрейды\Сервис сообщений\MessageServ
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\obj\Debug\net5.0\MessageService.genruntimeconfig.cache
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\bin\Debug\net5.0\DataBase\Users.json
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\bin\Debug\net5.0\DataBase\Messages.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\appsettings.Development.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\appsettings.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\DataBase\Messages.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\DataBase\Users.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.exe
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.deps.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.runtimeconfig.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.runtimeconfig.dev.json
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\ref\MessageService.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.pdb
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\MessageService.xml
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.csproj.AssemblyReference.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.AssemblyInfoInputs.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.AssemblyInfo.cs
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.csproj.CoreCompileInputs.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.MvcApplicationPartsAssemblyInfo.cs
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.MvcApplicationPartsAssemblyInfo.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\scopedcss\bundle\MessageService.styles.css
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\staticwebassets\MessageService.StaticWebAssets.Manifest.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.RazorTargetAssemblyInfo.cache
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.csproj.CopyComplete
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\ref\MessageService.dll
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.xml
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.pdb
+D:\Development\C#\Peergrades\MessageService\MessageService\obj\Debug\net5.0\MessageService.genruntimeconfig.cache

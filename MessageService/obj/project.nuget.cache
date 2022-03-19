@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "amtiHly98mTCJn8czAhO/RRlVuNjPkbBtFfEvvPf2EnowaYF9HDwgMB+ACbFmuXXAGSfZC3JqlekcAGCAcD4Hw==",
+  "dgSpecHash": "GYLN7n5RGqvWU0jrrVVonV5NuVGE90g+aJpb6rnqGptYeHS/WbHlUEGFd0vpVZFlR7QH/gHIMuYEjyLzwCN+gg==",
   "success": true,
-  "projectFilePath": "D:\\Development\\C#\\Пиргрейды\\Сервис сообщений\\MessageService\\MessageService\\MessageService.csproj",
+  "projectFilePath": "D:\\Development\\C#\\Peergrades\\MessageService\\MessageService\\MessageService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\angel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\angel\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\angel\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\angel\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\angel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\angel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

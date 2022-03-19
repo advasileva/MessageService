@@ -1,35 +1,79 @@
 ﻿using MessageService.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
 namespace MessageService
 {
+    /// <summary>
+    /// Сервис для доступа к хранилищу данных.
+    /// </summary>
     public static class DataStore
     {
+        /// <summary>
+        /// Получение списка пользователей.
+        /// </summary>
+        /// <returns>Список пользователей.</returns>
         public static List<User> ReadUsers()
         {
-            string data = File.ReadAllText(StaticSettings.UsersFile);
-            return JsonSerializer.Deserialize<List<User>>(data);
+            System.Diagnostics.Debug.WriteLine("Readed");
+            try
+            {
+                string data = File.ReadAllText(ConfigSettings.UsersFile);
+                return JsonSerializer.Deserialize<List<User>>(data);
+            }
+            catch
+            {
+                return new List<User>();
+            }
         }
 
+        /// <summary>
+        /// Обновление списка пользователей.
+        /// </summary>
+        /// <param name="users">Список пользователей.</param>
         public static void UpdateUsers(List<User> users)
         {
-            users.Sort((first, second) => -first.Email.CompareTo(second.Email));
-            string data = JsonSerializer.Serialize(users);
-            File.WriteAllText(StaticSettings.UsersFile, data);
+            System.Diagnostics.Debug.WriteLine("Updated" + users.Count);
+            try
+            {
+                users.Sort((first, second) => first.Email.CompareTo(second.Email));
+                string data = JsonSerializer.Serialize(users);
+                File.WriteAllText(ConfigSettings.UsersFile, data);
+            }
+            catch { }
         }
 
+        /// <summary>
+        /// Получение списка сообщений.
+        /// </summary>
+        /// <returns>Список сообщений.</returns>
         public static List<UserMessage> ReadMessages()
         {
-            string data = File.ReadAllText(StaticSettings.MessagesFile);
-            return JsonSerializer.Deserialize<List<UserMessage>>(data);
+            try
+            {
+                string data = File.ReadAllText(ConfigSettings.MessagesFile);
+                return JsonSerializer.Deserialize<List<UserMessage>>(data);
+            }
+            catch
+            {
+                return new List<UserMessage>();
+            }
         }
 
+        /// <summary>
+        /// Обновление списка сообщений.
+        /// </summary>
+        /// <param name="messages">Список сообщений.</param>
         public static void UpdateMessages(List<UserMessage> messages)
         {
-            string data = JsonSerializer.Serialize(messages);
-            File.WriteAllText(StaticSettings.MessagesFile, data);
+            try
+            {
+                string data = JsonSerializer.Serialize(messages);
+                File.WriteAllText(ConfigSettings.MessagesFile, data);
+            }
+            catch { }
         }
     }
 }

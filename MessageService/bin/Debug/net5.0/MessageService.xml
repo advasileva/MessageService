@@ -4,54 +4,262 @@
         <name>MessageService</name>
     </assembly>
     <members>
+        <member name="T:MessageService.Controllers.MessagesController">
+            <summary>
+            Контроллер для запросов на действия со списком сообщений.
+            </summary>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessagesSenderReceiver(System.String,System.String)">
+            <summary>
+            Получения списка сообщений по идентификаторам отправителя и получателя.
+            </summary>
+            <param name="senderId">Идентификатор отправителя.</param>
+            <param name="receiverId">Идентификатор получателя.</param>
+            <returns>Выборка сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessagesSender(System.String)">
+            <summary>
+            Получения списка сообщений по идентификатору отправителя.
+            </summary>
+            <param name="senderId">Идентификатор отправителя.</param>
+            <returns>Выборка сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessagesReceiver(System.String)">
+            <summary>
+            Получения списка сообщений по идентификатору получателя.
+            </summary>
+            <param name="receiverId">Идентификатор получателя.</param>
+            <returns>Выборка сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.PostMessage(System.String,System.String,System.String,System.String)">
+            <summary>
+            Добавление нового сообщения.
+            </summary>
+            <param name="subject">Тема сообщения.</param>
+            <param name="message">Текстовое содержание сообщения.</param>
+            <param name="senderId">Идентификатор отправителя.</param>
+            <param name="receiverId">Идентификатор получателя.</param>
+            <returns>Результат добавления.</returns>
+        </member>
+        <member name="T:MessageService.Controllers.MessageServiceController">
+            <summary>
+            Основной контроллер сервиса сообщений.
+            </summary>
+        </member>
+        <member name="P:MessageService.Controllers.MessageServiceController._users">
+            <summary>
+            Свойство для получения актуального списка пользователей.
+            </summary>
+        </member>
+        <member name="P:MessageService.Controllers.MessageServiceController._messages">
+            <summary>
+            Свойство для получения актуального списка сообщений.
+            </summary>
+        </member>
         <member name="M:MessageService.Controllers.MessageServiceController.Post">
             <summary>
             Инициализация списка пользователей и списка сообщений.
             </summary>
-            <returns></returns>
+            <returns>Результат действия.</returns>
         </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.GetUser(System.String)">
+        <member name="T:MessageService.Controllers.UsersController">
+            <summary>
+            Контроллер для запросов на действия со списком пользователей.
+            </summary>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.GetUser(System.String)">
             <summary>
             Получение информации о пользователе по идентификатору.
             </summary>
-            <param name="email"></param>
-            <returns></returns>
+            <param name="email">Идентификатор пользователя.</param>
+            <returns>Результат поиска.</returns>
         </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.Get">
+        <member name="M:MessageService.Controllers.UsersController.GetUsers">
             <summary>
             Получение всего списка пользователей.
             </summary>
-            <returns></returns>
+            <returns>Список всех пользователей.</returns>
         </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesSenderReceiver(System.String,System.String)">
-            <summary>
-            Получения списка сообщений по идентификаторам отправителя и получателя.
-            </summary>
-            <param name="senderId"></param>
-            <param name="receiverId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesSender(System.String)">
-            <summary>
-            Получения списка сообщений по идентификатору отправителя.
-            </summary>
-            <param name="senderId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.GetMessagesReceiver(System.String)">
-            <summary>
-            Получения списка сообщений по идентификатору получателя.
-            </summary>
-            <param name="receiverId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.PostUser(System.String,System.String)">
+        <member name="M:MessageService.Controllers.UsersController.PostUser(System.String,System.String)">
             <summary>
             Добавление нового пользователя.
             </summary>
-            <param name="UserName"></param>
-            <param name="Email"></param>
-            <returns></returns>
+            <param name="userName">Имя.</param>
+            <param name="email">Идентификатор.</param>
+            <returns>Результат добавления.</returns>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.GetUsersLimitOffset(System.Int32,System.Int32)">
+            <summary>
+            Получение выборки пользователей.
+            </summary>
+            <param name="limit">Потолок выборки.</param>
+            <param name="offset">Количество пропущенных с начала пользователей.</param>
+            <returns>Выборка пользователей.</returns>
+        </member>
+        <member name="T:MessageService.DataStore">
+            <summary>
+            Сервис для доступа к хранилищу данных.
+            </summary>
+        </member>
+        <member name="M:MessageService.DataStore.ReadUsers">
+            <summary>
+            Получение списка пользователей.
+            </summary>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:MessageService.DataStore.UpdateUsers(System.Collections.Generic.List{MessageService.Models.User})">
+            <summary>
+            Обновление списка пользователей.
+            </summary>
+            <param name="users">Список пользователей.</param>
+        </member>
+        <member name="M:MessageService.DataStore.ReadMessages">
+            <summary>
+            Получение списка сообщений.
+            </summary>
+            <returns>Список сообщений.</returns>
+        </member>
+        <member name="M:MessageService.DataStore.UpdateMessages(System.Collections.Generic.List{MessageService.Models.UserMessage})">
+            <summary>
+            Обновление списка сообщений.
+            </summary>
+            <param name="messages">Список сообщений.</param>
+        </member>
+        <member name="T:MessageService.Generator">
+            <summary>
+            Сервис для генерации объектов.
+            </summary>
+        </member>
+        <member name="F:MessageService.Generator._random">
+            <summary>
+            Экземпляр рандомайзера.
+            </summary>
+        </member>
+        <member name="M:MessageService.Generator.GenerateUsers">
+            <summary>
+            Получение списка корректных пользователей.
+            </summary>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:MessageService.Generator.GenerateMessages">
+            <summary>
+            Получение списка сообщений.
+            </summary>
+            <returns>Список сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Generator.GenerateString(System.Int32)">
+            <summary>
+            Получение случайной строки заданной длины.
+            </summary>
+            <param name="lenght">Длина строки.</param>
+            <returns>Случайная строка.</returns>
+        </member>
+        <member name="F:MessageService.Generator.emails">
+            <summary>
+            Список доменов почт.
+            </summary>
+        </member>
+        <member name="T:MessageService.Models.ConfigSettings">
+            <summary>
+            Класс настроек проекта.
+            </summary>
+        </member>
+        <member name="F:MessageService.Models.ConfigSettings.UsersFile">
+            <summary>
+            Путь к файлу со списком пользователей.
+            </summary>
+        </member>
+        <member name="F:MessageService.Models.ConfigSettings.MessagesFile">
+            <summary>
+            Путь к файлу со списком сообщений.
+            </summary>
+        </member>
+        <member name="T:MessageService.Models.User">
+            <summary>
+            Модель, описывающая пользователя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.User.UserName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.User.Email">
+            <summary>
+            Идентификатор пользователя.
+            </summary>
+        </member>
+        <member name="T:MessageService.Models.UserMessage">
+            <summary>
+            Модель, описывающая сообщение.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserMessage.Subject">
+            <summary>
+            Тема сообщения.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserMessage.Message">
+            <summary>
+            Текстовое содержание сообщения.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserMessage.SenderId">
+            <summary>
+            Идентификатор отправителя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserMessage.ReceiverId">
+            <summary>
+            Идентификатор получателя.
+            </summary>
+        </member>
+        <member name="T:MessageService.Program">
+            <summary>
+            Основной класс программы.
+            </summary>
+        </member>
+        <member name="M:MessageService.Program.Main(System.String[])">
+            <summary>
+            Точка входа в программу.
+            </summary>
+            <param name="args">Аргументы.</param>
+        </member>
+        <member name="M:MessageService.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Инициализация HostBuilder.
+            </summary>
+            <param name="args">Аргументы.</param>
+            <returns>Экземпляр HostBuilder.</returns>
+        </member>
+        <member name="T:MessageService.Startup">
+            <summary>
+            Класс для определения поведения программы.
+            </summary>
+        </member>
+        <member name="M:MessageService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Инициализация конфигурации.
+            </summary>
+            <param name="configuration">Конфигурация.</param>
+        </member>
+        <member name="P:MessageService.Startup.Configuration">
+            <summary>
+            Конфигурация.
+            </summary>
+        </member>
+        <member name="M:MessageService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Настройка сервисов конфигурации.
+            </summary>
+            <param name="services">Сервисы.</param>
+        </member>
+        <member name="M:MessageService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Настройка конфигурации.
+            </summary>
+            <param name="app">Приложение.</param>
+            <param name="env">Среда.</param>
         </member>
     </members>
 </doc>

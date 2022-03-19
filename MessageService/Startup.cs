@@ -15,15 +15,29 @@ using System.Threading.Tasks;
 
 namespace MessageService
 {
+    /// <summary>
+    /// Класс для определения поведения программы.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Инициализация конфигурации.
+        /// </summary>
+        /// <param name="configuration">Конфигурация.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Конфигурация.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// Настройка сервисов конфигурации.
+        /// </summary>
+        /// <param name="services">Сервисы.</param>
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -36,6 +50,11 @@ namespace MessageService
             });
         }
 
+        /// <summary>
+        /// Настройка конфигурации.
+        /// </summary>
+        /// <param name="app">Приложение.</param>
+        /// <param name="env">Среда.</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

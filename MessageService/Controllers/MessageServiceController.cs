@@ -1,8 +1,9 @@
 ﻿using MessageService.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
-using System;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using MessageService.Services;
 
 namespace MessageService.Controllers
 {
@@ -14,22 +15,31 @@ namespace MessageService.Controllers
     public class MessageServiceController : Controller
     {
         /// <summary>
-        /// Свойство для получения актуального списка пользователей.
+        /// Явно определённый конструктор для подписки на события изменения коллекций.
         /// </summary>
-        protected static List<User> _users
+        public MessageServiceController()
         {
-            get => DataStore.ReadUsers();
-            set => DataStore.UpdateUsers(value);
+            _users.CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) =>
+            {
+                DataStore.UpdateUsers(_users.ToList());
+                _users = new(DataStore.ReadUsers());
+            };
+            _messages.CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) =>
+            {
+                DataStore.UpdateMessages(_messages.ToList());
+                _messages = new(DataStore.ReadMessages());
+            };
         }
 
         /// <summary>
-        /// Свойство для получения актуального списка сообщений.
+        /// Актуальный список пользователей.
         /// </summary>
-        protected List<UserMessage> _messages
-        {
-            get => DataStore.ReadMessages();
-            set => DataStore.UpdateMessages(value);
-        }
+        protected static ObservableCollection<User> _users = new(DataStore.ReadUsers());
+
+        /// <summary>
+        /// Актуальный список сообщений.
+        /// </summary>
+        protected ObservableCollection<UserMessage> _messages = new(DataStore.ReadMessages());
 
         /// <summary>
         /// Инициализация списка пользователей и списка сообщений.
@@ -42,8 +52,15 @@ namespace MessageService.Controllers
             {
                 return BadRequest(ModelState);
             }
-            _users = Generator.GenerateUsers();
-            _messages = Generator.GenerateMessages();
+            _users = new(Generator.GenerateUsers());
+            // Дублирование кода выходит...
+            // Вероятно, надо было искусственно вызывать CollectionChanged
+            // или выносить обработчики в нормальный метод
+            DataStore.UpdateUsers(_users.ToList()); 
+            _users = new(DataStore.ReadUsers());
+            _messages = new(Generator.GenerateMessages());
+            DataStore.UpdateMessages(_messages.ToList());
+            _messages = new(DataStore.ReadMessages());
             return Ok();
         }
     }

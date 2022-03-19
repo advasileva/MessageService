@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace MessageService
+namespace MessageService.Services
 {
     /// <summary>
     /// Сервис для генерации объектов.

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace MessageService
+namespace MessageService.Services
 {
     /// <summary>
     /// Сервис для доступа к хранилищу данных.
@@ -17,7 +17,6 @@ namespace MessageService
         /// <returns>Список пользователей.</returns>
         public static List<User> ReadUsers()
         {
-            System.Diagnostics.Debug.WriteLine("Readed");
             try
             {
                 string data = File.ReadAllText(ConfigSettings.UsersFile);
@@ -35,7 +34,6 @@ namespace MessageService
         /// <param name="users">Список пользователей.</param>
         public static void UpdateUsers(List<User> users)
         {
-            System.Diagnostics.Debug.WriteLine("Updated" + users.Count);
             try
             {
                 users.Sort((first, second) => first.Email.CompareTo(second.Email));

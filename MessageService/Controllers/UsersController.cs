@@ -21,7 +21,6 @@ namespace MessageService.Controllers
         public IActionResult GetUser(string email)
         {
             User user = _users.SingleOrDefault(p => p.Email == email);
-            System.Diagnostics.Debug.WriteLine(email);
             if (user == null)
             {
                 return NotFound();
@@ -57,14 +56,6 @@ namespace MessageService.Controllers
                 UserName = userName,
                 Email = email
             });
-            System.Diagnostics.Debug.WriteLine(_users.Count);
-            var users = _users;
-            users.Add(new User
-            {
-                UserName = userName,
-                Email = email
-            });
-            _users = users;
             return Ok();
         }
 

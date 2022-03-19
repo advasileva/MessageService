@@ -60,5 +60,5 @@ D:\Development\C#\Пиргрейды\Сервис сообщений\MessageServ
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\obj\Debug\net5.0\MessageService.xml
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\obj\Debug\net5.0\MessageService.pdb
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\obj\Debug\net5.0\MessageService.genruntimeconfig.cache
-D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\bin\Debug\net5.0\DataBase\Messages.json
 D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\bin\Debug\net5.0\DataBase\Users.json
+D:\Development\C#\Пиргрейды\Сервис сообщений\MessageService\MessageService\bin\Debug\net5.0\DataBase\Messages.json

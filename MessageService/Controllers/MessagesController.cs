@@ -67,15 +67,13 @@ namespace MessageService.Controllers
             {
                 return NotFound();
             }
-            var messages = _messages;
-            messages.Add(new UserMessage
+            _messages.Add(new UserMessage
             {
                 Subject = subject,
                 Message = message,
                 SenderId = senderId,
                 ReceiverId = receiverId
             });
-            _messages = messages;
             return Ok();
         }
     }

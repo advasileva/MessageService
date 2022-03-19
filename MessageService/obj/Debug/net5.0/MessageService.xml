@@ -46,14 +46,19 @@
             Основной контроллер сервиса сообщений.
             </summary>
         </member>
-        <member name="P:MessageService.Controllers.MessageServiceController._users">
+        <member name="M:MessageService.Controllers.MessageServiceController.#ctor">
             <summary>
-            Свойство для получения актуального списка пользователей.
+            Явно определённый конструктор для подписки на события изменения коллекций.
             </summary>
         </member>
-        <member name="P:MessageService.Controllers.MessageServiceController._messages">
+        <member name="F:MessageService.Controllers.MessageServiceController._users">
             <summary>
-            Свойство для получения актуального списка сообщений.
+            Актуальный список пользователей.
+            </summary>
+        </member>
+        <member name="F:MessageService.Controllers.MessageServiceController._messages">
+            <summary>
+            Актуальный список сообщений.
             </summary>
         </member>
         <member name="M:MessageService.Controllers.MessageServiceController.Post">
@@ -95,69 +100,6 @@
             <param name="limit">Потолок выборки.</param>
             <param name="offset">Количество пропущенных с начала пользователей.</param>
             <returns>Выборка пользователей.</returns>
-        </member>
-        <member name="T:MessageService.DataStore">
-            <summary>
-            Сервис для доступа к хранилищу данных.
-            </summary>
-        </member>
-        <member name="M:MessageService.DataStore.ReadUsers">
-            <summary>
-            Получение списка пользователей.
-            </summary>
-            <returns>Список пользователей.</returns>
-        </member>
-        <member name="M:MessageService.DataStore.UpdateUsers(System.Collections.Generic.List{MessageService.Models.User})">
-            <summary>
-            Обновление списка пользователей.
-            </summary>
-            <param name="users">Список пользователей.</param>
-        </member>
-        <member name="M:MessageService.DataStore.ReadMessages">
-            <summary>
-            Получение списка сообщений.
-            </summary>
-            <returns>Список сообщений.</returns>
-        </member>
-        <member name="M:MessageService.DataStore.UpdateMessages(System.Collections.Generic.List{MessageService.Models.UserMessage})">
-            <summary>
-            Обновление списка сообщений.
-            </summary>
-            <param name="messages">Список сообщений.</param>
-        </member>
-        <member name="T:MessageService.Generator">
-            <summary>
-            Сервис для генерации объектов.
-            </summary>
-        </member>
-        <member name="F:MessageService.Generator._random">
-            <summary>
-            Экземпляр рандомайзера.
-            </summary>
-        </member>
-        <member name="M:MessageService.Generator.GenerateUsers">
-            <summary>
-            Получение списка корректных пользователей.
-            </summary>
-            <returns>Список пользователей.</returns>
-        </member>
-        <member name="M:MessageService.Generator.GenerateMessages">
-            <summary>
-            Получение списка сообщений.
-            </summary>
-            <returns>Список сообщений.</returns>
-        </member>
-        <member name="M:MessageService.Generator.GenerateString(System.Int32)">
-            <summary>
-            Получение случайной строки заданной длины.
-            </summary>
-            <param name="lenght">Длина строки.</param>
-            <returns>Случайная строка.</returns>
-        </member>
-        <member name="F:MessageService.Generator.emails">
-            <summary>
-            Список доменов почт.
-            </summary>
         </member>
         <member name="T:MessageService.Models.ConfigSettings">
             <summary>
@@ -231,6 +173,69 @@
             </summary>
             <param name="args">Аргументы.</param>
             <returns>Экземпляр HostBuilder.</returns>
+        </member>
+        <member name="T:MessageService.Services.DataStore">
+            <summary>
+            Сервис для доступа к хранилищу данных.
+            </summary>
+        </member>
+        <member name="M:MessageService.Services.DataStore.ReadUsers">
+            <summary>
+            Получение списка пользователей.
+            </summary>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:MessageService.Services.DataStore.UpdateUsers(System.Collections.Generic.List{MessageService.Models.User})">
+            <summary>
+            Обновление списка пользователей.
+            </summary>
+            <param name="users">Список пользователей.</param>
+        </member>
+        <member name="M:MessageService.Services.DataStore.ReadMessages">
+            <summary>
+            Получение списка сообщений.
+            </summary>
+            <returns>Список сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Services.DataStore.UpdateMessages(System.Collections.Generic.List{MessageService.Models.UserMessage})">
+            <summary>
+            Обновление списка сообщений.
+            </summary>
+            <param name="messages">Список сообщений.</param>
+        </member>
+        <member name="T:MessageService.Services.Generator">
+            <summary>
+            Сервис для генерации объектов.
+            </summary>
+        </member>
+        <member name="F:MessageService.Services.Generator._random">
+            <summary>
+            Экземпляр рандомайзера.
+            </summary>
+        </member>
+        <member name="M:MessageService.Services.Generator.GenerateUsers">
+            <summary>
+            Получение списка корректных пользователей.
+            </summary>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:MessageService.Services.Generator.GenerateMessages">
+            <summary>
+            Получение списка сообщений.
+            </summary>
+            <returns>Список сообщений.</returns>
+        </member>
+        <member name="M:MessageService.Services.Generator.GenerateString(System.Int32)">
+            <summary>
+            Получение случайной строки заданной длины.
+            </summary>
+            <param name="lenght">Длина строки.</param>
+            <returns>Случайная строка.</returns>
+        </member>
+        <member name="F:MessageService.Services.Generator.emails">
+            <summary>
+            Список доменов почт.
+            </summary>
         </member>
         <member name="T:MessageService.Startup">
             <summary>

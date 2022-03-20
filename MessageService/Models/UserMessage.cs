@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MessageService.Models
+﻿namespace MessageService.Models
 {
     /// <summary>
     /// Модель, описывающая сообщение.

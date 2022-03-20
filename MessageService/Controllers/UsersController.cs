@@ -1,7 +1,7 @@
 ﻿using MessageService.Models;
+using MessageService.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System;
 
 namespace MessageService.Controllers
 {
@@ -13,6 +13,13 @@ namespace MessageService.Controllers
     public class UsersController : MessageServiceController
     {
         /// <summary>
+        /// Конструктор вспомогательного контроллера.
+        /// </summary>
+        /// <param name="dataStore">Экземпляр хранилища данных.</param>
+        public UsersController(DataStore dataStore) : base(dataStore)
+        { }
+
+        /// <summary>
         /// Получение информации о пользователе по идентификатору.
         /// </summary>
         /// <param name="email">Идентификатор пользователя.</param>
@@ -23,7 +30,7 @@ namespace MessageService.Controllers
             User user = _users.SingleOrDefault(p => p.Email == email);
             if (user == null)
             {
-                return NotFound();
+                return NotFound("Пользователь не найден");
             }
             return Ok(user);
         }
@@ -49,14 +56,14 @@ namespace MessageService.Controllers
         {
             if (_users.Any(user => user.Email == email) || email == null)
             {
-                return NotFound();
+                return NotFound("Пользователь с такой почтой уже существует");
             }
             _users.Add(new User
             {
                 UserName = userName,
                 Email = email
             });
-            return Ok();
+            return Ok("Пользователь добавлен");
         }
 
         /// <summary>
@@ -70,7 +77,7 @@ namespace MessageService.Controllers
         {
             if (limit <= 0 || offset < 0)
             {
-                return BadRequest();
+                return BadRequest("Параметры выборки некорректны");
             }
             return Ok(_users.Skip(offset).Take(limit));
         }

@@ -14,32 +14,37 @@ namespace MessageService.Controllers
     [ApiController]
     public class MessageServiceController : Controller
     {
+        private DataStore _dataStore;
+
         /// <summary>
         /// Явно определённый конструктор для подписки на события изменения коллекций.
         /// </summary>
-        public MessageServiceController()
+        public MessageServiceController(DataStore dataStore)
         {
+            _dataStore = dataStore;
+            _users = new(_dataStore.ReadUsers());
+            _messages = new(_dataStore.ReadMessages());
             _users.CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) =>
             {
-                DataStore.UpdateUsers(_users.ToList());
-                _users = new(DataStore.ReadUsers());
+                _dataStore.UpdateUsers(_users.ToList());
+                _users = new(_dataStore.ReadUsers());
             };
             _messages.CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) =>
             {
-                DataStore.UpdateMessages(_messages.ToList());
-                _messages = new(DataStore.ReadMessages());
+                _dataStore.UpdateMessages(_messages.ToList());
+                _messages = new(_dataStore.ReadMessages());
             };
         }
 
         /// <summary>
         /// Актуальный список пользователей.
         /// </summary>
-        protected static ObservableCollection<User> _users = new(DataStore.ReadUsers());
+        protected ObservableCollection<User> _users;
 
         /// <summary>
         /// Актуальный список сообщений.
         /// </summary>
-        protected ObservableCollection<UserMessage> _messages = new(DataStore.ReadMessages());
+        protected ObservableCollection<UserMessage> _messages;
 
         /// <summary>
         /// Инициализация списка пользователей и списка сообщений.
@@ -53,15 +58,12 @@ namespace MessageService.Controllers
                 return BadRequest(ModelState);
             }
             _users = new(Generator.GenerateUsers());
-            // Дублирование кода выходит...
-            // Вероятно, надо было искусственно вызывать CollectionChanged
-            // или выносить обработчики в нормальный метод
-            DataStore.UpdateUsers(_users.ToList()); 
-            _users = new(DataStore.ReadUsers());
+            _dataStore.UpdateUsers(_users.ToList()); 
+            _users = new(_dataStore.ReadUsers());
             _messages = new(Generator.GenerateMessages());
-            DataStore.UpdateMessages(_messages.ToList());
-            _messages = new(DataStore.ReadMessages());
-            return Ok();
+            _dataStore.UpdateMessages(_messages.ToList());
+            _messages = new(_dataStore.ReadMessages());
+            return Ok("Списки инициализированы");
         }
     }
 }

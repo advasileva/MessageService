@@ -9,13 +9,13 @@ namespace MessageService.Services
     /// <summary>
     /// Сервис для доступа к хранилищу данных.
     /// </summary>
-    public static class DataStore
+    public class DataStore
     {
         /// <summary>
         /// Получение списка пользователей.
         /// </summary>
         /// <returns>Список пользователей.</returns>
-        public static List<User> ReadUsers()
+        public List<User> ReadUsers()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace MessageService.Services
         /// Обновление списка пользователей.
         /// </summary>
         /// <param name="users">Список пользователей.</param>
-        public static void UpdateUsers(List<User> users)
+        public void UpdateUsers(List<User> users)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace MessageService.Services
         /// Получение списка сообщений.
         /// </summary>
         /// <returns>Список сообщений.</returns>
-        public static List<UserMessage> ReadMessages()
+        public List<UserMessage> ReadMessages()
         {
             try
             {
@@ -64,7 +64,7 @@ namespace MessageService.Services
         /// Обновление списка сообщений.
         /// </summary>
         /// <param name="messages">Список сообщений.</param>
-        public static void UpdateMessages(List<UserMessage> messages)
+        public void UpdateMessages(List<UserMessage> messages)
         {
             try
             {

@@ -1,4 +1,5 @@
 ﻿using MessageService.Models;
+using MessageService.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,13 @@ namespace MessageService.Controllers
     [ApiController]
     public class MessagesController : MessageServiceController
     {
+        /// <summary>
+        /// Конструктор вспомогательного контроллера.
+        /// </summary>
+        /// <param name="dataStore">Экземпляр хранилища данных.</param>
+        public MessagesController(DataStore dataStore) : base(dataStore) 
+        { }
+
         /// <summary>
         /// Получения списка сообщений по идентификаторам отправителя и получателя.
         /// </summary>
@@ -65,7 +73,7 @@ namespace MessageService.Controllers
         {
             if (!_users.Any(user => user.Email == senderId) || !_users.Any(user => user.Email == receiverId))
             {
-                return NotFound();
+                return NotFound("Не найден получатель или отправитель");
             }
             _messages.Add(new UserMessage
             {
@@ -74,7 +82,7 @@ namespace MessageService.Controllers
                 SenderId = senderId,
                 ReceiverId = receiverId
             });
-            return Ok();
+            return Ok("Сообщение отправлено");
         }
     }
 }

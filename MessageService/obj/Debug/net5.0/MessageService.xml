@@ -9,6 +9,12 @@
             Контроллер для запросов на действия со списком сообщений.
             </summary>
         </member>
+        <member name="M:MessageService.Controllers.MessagesController.#ctor(MessageService.Services.DataStore)">
+            <summary>
+            Конструктор вспомогательного контроллера.
+            </summary>
+            <param name="dataStore">Экземпляр хранилища данных.</param>
+        </member>
         <member name="M:MessageService.Controllers.MessagesController.GetMessagesSenderReceiver(System.String,System.String)">
             <summary>
             Получения списка сообщений по идентификаторам отправителя и получателя.
@@ -46,7 +52,7 @@
             Основной контроллер сервиса сообщений.
             </summary>
         </member>
-        <member name="M:MessageService.Controllers.MessageServiceController.#ctor">
+        <member name="M:MessageService.Controllers.MessageServiceController.#ctor(MessageService.Services.DataStore)">
             <summary>
             Явно определённый конструктор для подписки на события изменения коллекций.
             </summary>
@@ -71,6 +77,12 @@
             <summary>
             Контроллер для запросов на действия со списком пользователей.
             </summary>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.#ctor(MessageService.Services.DataStore)">
+            <summary>
+            Конструктор вспомогательного контроллера.
+            </summary>
+            <param name="dataStore">Экземпляр хранилища данных.</param>
         </member>
         <member name="M:MessageService.Controllers.UsersController.GetUser(System.String)">
             <summary>

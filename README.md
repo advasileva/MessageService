@@ -23,11 +23,11 @@
 ---
 Стягивание образа с моего [DockerHub](https://hub.docker.com/repository/docker/alenavasileva/messageservice):  
 ```
-docker pull alenavasileva/messageservice
+docker pull advasileva/messageservice
 ```
 Запуск контейнера: 
 ```
-docker run -p 56789:80 alenavasileva/messageservice
+docker run -p 56789:80 advasileva/messageservice
 ```
 Теперь api будет доступен по адресу http://localhost:56789/api/message-service/users
   
